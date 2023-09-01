@@ -1,5 +1,7 @@
 // Enumeration for Breed
 enum Breed { POODLE, WOLF, CORGEY }
+
+enum Size { SMALL, MEDIUM, LARGE }
 public class Dog {
 
     private String name;
@@ -9,12 +11,15 @@ public class Dog {
 
     private Breed breedType;
 
-    public Dog(String name, int age, String color, double weight, Breed breedType) {
+    private Size sizeType;
+
+    public Dog(String name, int age, String color, double weight, Breed breedType, Size sizeType) {
         this.name = name;
         this.age = age;
         this.color = color;
         this.weight = weight;
         this.breedType = breedType;
+        this.sizeType = sizeType;
     }
 
     public void bark() {
@@ -41,6 +46,12 @@ public class Dog {
     public void setBreedType(Breed breedType) {
         this.breedType = breedType;
     }
+    public Size getSizeType() {
+        return sizeType;
+    }
+    public void setSizeType(Size sizeType) {
+        this.sizeType = sizeType;
+    }
     public int getAge() {
         return age;
     }
@@ -64,7 +75,7 @@ public class Dog {
     // Main method
     public static void main(String[] args) {
 //dog 1
-        Dog myDog1 = new Dog("Snoopy", 12, "brown", 20.6, Breed.CORGEY);
+        Dog myDog1 = new Dog("Snoopy", 12, "brown", 20.61, Breed.CORGEY, Size.MEDIUM);
         myDog1.bark();
 
 
@@ -73,8 +84,9 @@ public class Dog {
         System.out.println("Color: " + myDog1.getColor());
         System.out.println("Weight: " + myDog1.getWeight() + " lbs.");
         System.out.println("Breed: " + myDog1.getBreedType());
+        System.out.println("Size: " + myDog1.getSizeType());
 //dog 2
-        Dog myDog2 = new Dog("Spot", 5, "Black", 13.56,Breed.POODLE);
+        Dog myDog2 = new Dog("Spot", 5, "Black", 13.56,Breed.POODLE, Size.SMALL);
         myDog2.sleep();
 
         System.out.println("Name: " + myDog2.getName());
@@ -82,8 +94,9 @@ public class Dog {
         System.out.println("Color: " + myDog2.getColor());
         System.out.println("Weight: " + myDog2.getWeight() + " lbs.");
         System.out.println("Breed: " + myDog2.getBreedType());
+        System.out.println("Size: " + myDog2.getSizeType());
 //dog 3
-        Dog myDog3 = new Dog("Wolf", 7, "White", 35.84, Breed.WOLF);
+        Dog myDog3 = new Dog("Wolf", 7, "White", 74.43, Breed.WOLF, Size.LARGE);
         myDog3.eat();
 
         System.out.println("Name: " + myDog3.getName());
@@ -91,5 +104,6 @@ public class Dog {
         System.out.println("Color: " + myDog3.getColor());
         System.out.println("Weight: " + myDog3.getWeight() + " lbs.");
         System.out.println("Breed: " + myDog3.getBreedType());
+        System.out.println("Size: " + myDog3.getSizeType());
     }
 }
